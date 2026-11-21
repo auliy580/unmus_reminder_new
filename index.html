@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>UNMUS REMINDER</title>
+</head>
+<body>
+    <!-- HALAMAN LOGIN & DAFTAR AKUN -->
+    <div id="halamanLogin" class="halaman-login">
+        <div class="box-login">
+            <h2><i class="fa-solid fa-graduation-cap"></i> UNMUS REMINDER</h2>
+            <p>Sistem Pengingat Tugas & Jadwal Kuliah Mahasiswa UNMUS</p>
+
+            <div id="formLogin">
+                <input type="text" id="loginNPM" placeholder="NPM">
+                <input type="password" id="loginSandi" placeholder="Kata Sandi">
+                <button onclick="loginAkun()">Masuk</button>
+                <p class="teks-ganti">Belum punya akun? <span onclick="tampilDaftar()">Daftar disini</span></p>
+            </div>
+
+            <div id="formDaftar" style="display:none">
+                <input type="text" id="daftarNama" placeholder="Nama Lengkap">
+                <input type="text" id="daftarNPM" placeholder="NPM">
+                <input type="password" id="daftarSandi" placeholder="Buat Kata Sandi">
+                <button onclick="daftarAkun()">Daftar Akun</button>
+                <p class="teks-ganti">Sudah punya akun? <span onclick="tampilLogin()">Login disini</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- HALAMAN UTAMA SETELAH LOGIN -->
+    <div id="halamanUtama" class="halaman-utama" style="display:none">
+        <div class="container">
+            <header>
+                <h1><i class="fa-solid fa-graduation-cap"></i> UNMUS REMINDER</h1>
+                <p>Halo, <span id="tampilNamaUser"></span> 👋</p>
+            </header>
+
+            <div class="form-grid">
+                <div class="card-form">
+                    <h3><i class="fa-solid fa-book"></i> Tambah Jadwal Kuliah</h3>
+                    <select id="pilihHari">
+                        <option value="Senin">Senin</option>
+                        <option value="Selasa">Selasa</option>
+                        <option value="Rabu">Rabu</option>
+                        <option value="Kamis">Kamis</option>
+                        <option value="Jumat">Jumat</option>
+                        <option value="Sabtu">Sabtu</option>
+                    </select>
+                    <div class="dua-kolom">
+                        <input type="time" id="jamMulai">
+                        <input type="time" id="jamSelesai">
+                    </div>
+                    <input type="text" id="namaMatkul" placeholder="Nama Mata Kuliah">
+                    <button onclick="tambahJadwal()"><i class="fa-solid fa-plus"></i> Tambah Jadwal</button>
+                </div>
+
+                <div class="card-form">
+                    <h3><i class="fa-solid fa-bell"></i> Tambah Tugas & Deadline + Alarm</h3>
+                    <input type="text" id="namaTugas" placeholder="Nama Tugas">
+                    <input type="date" id="tanggalDeadline">
+                    <input type="time" id="jamAlarm">
+                    <button onclick="tambahTugas()"><i class="fa-solid fa-plus"></i> Tambah Tugas</button>
+                </div>
+            </div>
+
+            <h2><i class="fa-solid fa-calendar-week"></i> Jadwal Kuliah Mingguan</h2>
+            <div id="wadahJadwal">
+                <div class="hari-wrap" data-hari="Senin">
+                    <h4>Senin</h4>
+                    <div class="daftar-baris-jadwal"></div>
+                </div>
+                <div class="hari-wrap" data-hari="Selasa">
+                    <h4>Selasa</h4>
+                    <div class="daftar-baris-jadwal"></div>
+                </div>
+                <div class="hari-wrap" data-hari="Rabu">
+                    <h4>Rabu</h4>
+                    <div class="daftar-baris-jadwal"></div>
+                </div>
+                <div class="hari-wrap" data-hari="Kamis">
+                    <h4>Kamis</h4>
+                    <div class="daftar-baris-jadwal"></div>
+                </div>
+                <div class="hari-wrap" data-hari="Jumat">
+                    <h4>Jumat</h4>
+                    <div class="daftar-baris-jadwal"></div>
+                </div>
+                <div class="hari-wrap" data-hari="Sabtu">
+                    <h4>Sabtu</h4>
+                    <div class="daftar-baris-jadwal"></div>
+                </div>
+            </div>
+
+            <h2><i class="fa-solid fa-list-check"></i> Daftar Tugas, Deadline & Alarm</h2>
+            <ul id="daftarTugas"></ul>
+
+            <div class="card-form pengaturan-akun">
+                <h3><i class="fa-solid fa-gear"></i> Ubah Kata Sandi Akun</h3>
+                <input type="password" id="sandiLama" placeholder="Kata Sandi Lama">
+                <input type="password" id="sandiBaru" placeholder="Kata Sandi Baru">
+                <button onclick="ubahSandi()">Ganti Kata Sandi</button>
+                <button class="tombol-keluar" onclick="keluarAkun()"><i class="fa-solid fa-right-from-bracket"></i> Keluar Akun</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="suaraAlarm" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3">
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
