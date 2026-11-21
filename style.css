@@ -192,6 +192,9 @@ h2 {
 .wadah-password {
   position: relative;
 }
+.wadah-password input {
+  padding-right: 45px !important;
+}
 .wadah-password button {
   position: absolute;
   right: 12px;
@@ -201,4 +204,5 @@ h2 {
   border: none;
   font-size: 18px;
   color: #6b3b24;
+  z-index: 10;
 }
