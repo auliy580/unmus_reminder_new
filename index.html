@@ -16,7 +16,12 @@
 
             <div id="formLogin">
                 <input type="text" id="loginNPM" placeholder="NPM">
-                <input type="password" id="loginSandi" placeholder="Kata Sandi">
+                <div class="wadah-password">
+  <input type="password" id="loginSandi" placeholder="Kata Sandi">
+  <button type="button" onclick="toggleMataLogin()">
+    <i class="fa-solid fa-eye" id="ikonMataLogin"></i>
+  </button>
+</div>
                 <button onclick="loginAkun()">Masuk</button>
                 <p class="teks-ganti">Belum punya akun? <span onclick="tampilDaftar()">Daftar disini</span></p>
             </div>
@@ -24,7 +29,12 @@
             <div id="formDaftar" style="display:none">
                 <input type="text" id="daftarNama" placeholder="Nama Lengkap">
                 <input type="text" id="daftarNPM" placeholder="NPM">
-                <input type="password" id="daftarSandi" placeholder="Buat Kata Sandi">
+                <div class="wadah-password">
+  <input type="password" id="daftarSandi" placeholder="Buat Kata Sandi">
+  <button type="button" onclick="toggleMataDaftar()">
+    <i class="fa-solid fa-eye" id="ikonMataDaftar"></i>
+  </button>
+</div>
                 <button onclick="daftarAkun()">Daftar Akun</button>
                 <p class="teks-ganti">Sudah punya akun? <span onclick="tampilLogin()">Login disini</span></p>
             </div>
