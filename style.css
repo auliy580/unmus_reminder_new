@@ -189,3 +189,16 @@ h2 {
     background: #a83c32;
     margin-top: 10px;
 }
+.wadah-password {
+  position: relative;
+}
+.wadah-password button {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  color: #6b3b24;
+}
