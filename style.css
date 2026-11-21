@@ -191,24 +191,25 @@ h2 {
 }
 .wadah-password {
   position: relative;
+  width: 100%;
 }
 .wadah-password input {
   width: 100%;
-  padding-right: 52px !important;
+  padding-right: 56px !important;
   box-sizing: border-box !important;
+  position: relative;
+  z-index: 10 !important;
+  pointer-events: auto !important;
+  touch-action: manipulation !important;
 }
 .wadah-password button {
   position: absolute;
-  right: 14px;
+  right: 12px;
   top: 50%;
   transform: translateY(-50%);
   background: transparent;
   border: none;
-  font-size: 18px;
+  font-size: 20px;
   color: #6b3b24;
-  z-index: 10;
-  pointer-events: none;
-}
-.wadah-password button i {
-  pointer-events: auto;
+  z-index: 20;
 }
