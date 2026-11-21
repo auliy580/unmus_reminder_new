@@ -193,3 +193,42 @@ if(akunTersimpan) {
     document.getElementById("tampilNamaUser").textContent = akunTersimpan.nama;
     renderSemua();
 }
+if(Notification.permission !== "granted"){
+  Notification.requestPermission();
+}
+
+function kirimNotifikasi(judul, isiPesan){
+  if(Notification.permission === "granted"){
+    new Notification(judul, {
+      body: isiPesan
+    })
+  }
+}
+
+function toggleMataDaftar(){
+  const input = document.getElementById("daftarSandi");
+  const ikon = document.getElementById("ikonMataDaftar");
+  if(input.type === "password"){
+    input.type = "text";
+    ikon.classList.remove("fa-eye");
+    ikon.classList.add("fa-eye-slash");
+  }else{
+    input.type = "password";
+    ikon.classList.remove("fa-eye-slash");
+    ikon.classList.add("fa-eye");
+  }
+}
+
+function toggleMataLogin(){
+  const input = document.getElementById("loginSandi");
+  const ikon = document.getElementById("ikonMataLogin");
+  if(input.type === "password"){
+    input.type = "text";
+    ikon.classList.remove("fa-eye");
+    ikon.classList.add("fa-eye-slash");
+  }else{
+    input.type = "password";
+    ikon.classList.remove("fa-eye-slash");
+    ikon.classList.add("fa-eye");
+  }
+}
